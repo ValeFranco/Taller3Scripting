@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorChanger : MonoBehaviour
+public class MandonColorChanger : MonoBehaviour
 {
     Renderer renderer;
     [SerializeField] Material[] differentColorMaterials = new Material[4];
