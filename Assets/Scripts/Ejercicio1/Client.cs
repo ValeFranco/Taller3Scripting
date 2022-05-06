@@ -19,10 +19,10 @@ public class Client : MonoBehaviour
             Destroy(lastObject);
         }
         lastObject = factory?.ObtenerObjeto();
-        lastObject.transform.position = transform.position;
+        //astObject.transform.position = transform.position;
     }
-    public void ClickButton()
-    {
-        factory.ObtenerObjeto();
-    }
+    //public void ClickButton()
+    //{
+        
+    //}
 }

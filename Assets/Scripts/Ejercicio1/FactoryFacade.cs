@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FactoryFacade : MonoBehaviour
-{
-    
-    [SerializeField]
+{ 
     private FirstObject firstFactory;
-
-    [SerializeField]
+ 
     private SecondObject secondFactory;
 
-    [SerializeField]
     private ThirdObject thirdObject;
 
     int caso = 1;
