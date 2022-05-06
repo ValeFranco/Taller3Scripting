@@ -5,7 +5,7 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour
 {
     private FactoryFacade facade;
-    public static int contador { get; private set; } = 1;
+    public static int Contador { get; private set; } = 1;
     private void Awake()
     {
         facade = GetComponent<FactoryFacade>();
@@ -13,25 +13,20 @@ public class CreateObject : MonoBehaviour
 
     void Start()
     {
-        if (contador ==1)
-        {
-            EventManager.onClicked += CreateObjectType1;
-        }
-        
-        //EventManager.onClickedBtn2 += CreateObjectType2;
-        //EventManager.onClickedBtn3 += CreateObjectType3;
+        EventManager.OnClicked += CyclicChange;
     }
 
-    void CreateObjectType1()
+    void CyclicChange()
     {
-        facade.GetNewObject(ObjectType.FristObject);
+        Contador = Contador == 3 ? 1 : Contador;
+        Contador++;
+
+        CreateObjectType(Contador);
     }
-    void CreateObjectType2()
+    void CreateObjectType(int enumNumber)
     {
-        facade.GetNewObject(ObjectType.SecondObject);
+        ObjectType objectType = (ObjectType)enumNumber;
+        facade.GetNewObject(objectType);
     }
-    void CreateObjectType3()
-    {
-        facade.GetNewObject(ObjectType.ThridObject);
-    }
+ 
 }

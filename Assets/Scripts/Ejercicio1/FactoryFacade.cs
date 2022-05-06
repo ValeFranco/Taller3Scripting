@@ -6,7 +6,7 @@ public enum ObjectType
 {
     FristObject,
     SecondObject,
-    ThridObject
+    ThirdObject
 }
 public class FactoryFacade : MonoBehaviour
 {
@@ -37,7 +37,7 @@ public class FactoryFacade : MonoBehaviour
                 result = secondFactory?.GetNewObject();
                 break;
 
-            case ObjectType.ThridObject:
+            case ObjectType.ThirdObject:
                 result = thridFactory?.GetNewObject();
                 break;
         }

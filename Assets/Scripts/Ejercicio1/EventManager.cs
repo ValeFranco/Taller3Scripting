@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class EventManager : MonoBehaviour
 {
     public delegate void ClickAction();
-    public static event ClickAction onClicked;
+    public static event ClickAction OnClicked;
     
     // Start is called before the first frame update
     void Update()
@@ -19,10 +19,7 @@ public class EventManager : MonoBehaviour
     {
         if (GUI.Button(new Rect(800, 850, 300, 100), "Tipo 2"))
         {
-            if (onClicked != null)
-            {
-                onClicked();
-            }
+            OnClicked?.Invoke();
         }
     }
 }

@@ -8,6 +8,6 @@ public class MandonColorChanger : MonoBehaviour
     [SerializeField] Material[] differentColorMaterials = new Material[4];
     private void Awake() => renderer = GetComponent<Renderer>();
     private void Start() => MandonEventManager.OnButtonClicked += ChangeColor;
-    void ChangeColor() => renderer.material = differentColorMaterials[MandonEventManager.cyclicCounter-1];
+    void ChangeColor() => renderer.material = differentColorMaterials[MandonEventManager.CyclicCounter-1];
 
 }
