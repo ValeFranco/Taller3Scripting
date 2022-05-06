@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateNewObject : MonoBehaviour
+public class CreateObject : MonoBehaviour
 {
     private FactoryFacade facade;
 

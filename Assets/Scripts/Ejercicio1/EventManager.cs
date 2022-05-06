@@ -13,19 +13,21 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void OnGUI()
     {
-        if (GUI.Button(new Rect(Screen.width / -646, -410, 235, 83), "Tipo 1"))
+        if (GUI.Button(new Rect(100, 850, 300, 100), "Tipo 1"))
         {
             if (onClickedBtn1 != null)
             {
                 onClickedBtn1();
             }
-        }else if (GUI.Button(new Rect(Screen.width / -14, -410, 235, 83), "Tipo 2"))
+        }
+        if (GUI.Button(new Rect(800, 850, 300, 100), "Tipo 2"))
         {
             if (onClickedBtn2 != null)
             {
                 onClickedBtn2();
             }
-        }else if (GUI.Button(new Rect(Screen.width / 643, -410, 235, 83), "Tipo 3"))
+        }
+        if (GUI.Button(new Rect(1500, 850, 300, 100), "Tipo 3"))
         {
             if (onClickedBtn3 != null)
             {
