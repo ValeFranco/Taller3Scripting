@@ -11,10 +11,7 @@ public class CreateObject : MonoBehaviour
         facade = GetComponent<FactoryFacade>();
     }
 
-    void Start()
-    {
-        EventManager.OnClicked += CyclicChange;
-    }
+    void Start() => EventManager.OnClicked += CyclicChange;
 
     void CyclicChange()
     {
