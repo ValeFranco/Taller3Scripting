@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletType2 : MonoBehaviour
+public class BulletType2 : Bullet
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnImpactDo()
     {
-        
+        StartCoroutine(disableInputFor1Second());
+        GetComponent<Collider>().enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator disableInputFor1Second()
     {
-        
+        PoolsManager.IsInputDisabled = true;
+        yield return new WaitForSeconds(0.5f);
+        PoolsManager.IsInputDisabled = true;
+        GetComponent<Collider>().enabled = true;
+        gameObject.SetActive(false);
+
+
     }
 }

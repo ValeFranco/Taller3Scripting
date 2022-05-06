@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletType1 : MonoBehaviour
+public class BulletType1 : Bullet
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnImpactDo()
     {
-        
+        Debug.Log("Projectil 1 ha impactado!");
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

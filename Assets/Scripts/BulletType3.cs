@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletType3 : MonoBehaviour
+public class BulletType3 : Bullet
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        GetComponent<ParticleSystem>().Stop();
+    }
+    public override void OnImpactDo()
+    {
+        StartCoroutine(PlayFor1Second());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator PlayFor1Second()
     {
-        
+        GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1f);
+        GetComponent<ParticleSystem>().Stop();
+        gameObject.SetActive(false);
+
     }
 }

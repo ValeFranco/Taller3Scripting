@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ProjectilePool : MonoBehaviour
+public class ProjectilePool : MonoBehaviour
 {
     //public static ProjectilePool SharedInstance; 
     public List<GameObject> BulletsPooled;
@@ -31,8 +31,7 @@ public abstract class ProjectilePool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootBulletManager();
-
+        if (!PoolsManager.IsInputDisabled) shootBulletManager();
     }
 
     GameObject GetPooledBullet()
@@ -49,7 +48,7 @@ public abstract class ProjectilePool : MonoBehaviour
 
     void shootBulletManager()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             GameObject bullet = GetPooledBullet();
 
@@ -59,11 +58,12 @@ public abstract class ProjectilePool : MonoBehaviour
                 bullet.transform.rotation = this.transform.rotation;
 
                 bullet.SetActive(true);
+
             }
         }
     }
 
-    void deactivateThisPool()
+    public void deactivateThisPool()
     {
 
     }

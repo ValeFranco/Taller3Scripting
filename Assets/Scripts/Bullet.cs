@@ -5,13 +5,17 @@ using UnityEngine;
 public abstract class Bullet : MonoBehaviour
 {
    Rigidbody rb;
-    [SerializeField] float thrustForce = 50f;
+    [SerializeField] float thrustForce = 2f;
     private void Awake() => rb = GetComponent<Rigidbody>();
-    private void Start() => rb.AddForce(Vector3.forward * thrustForce, ForceMode.Force);
 
+    private void Update()
+    {
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, thrustForce/3);
+        rb.AddForce(Vector3.forward * thrustForce/3, ForceMode.VelocityChange);
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag!="Bullet")
+        if (collision.gameObject.tag=="Target")
         {   
             OnImpactDo();
         }
