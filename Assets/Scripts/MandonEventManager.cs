@@ -6,7 +6,7 @@ public class MandonEventManager : MonoBehaviour
 {
     public delegate void MyClickAction();
     public static event MyClickAction OnButtonClicked;
-    public static int cyclicCounter { get; private set; } = 0;
+    public static int cyclicCounter { get; private set; } = 1; //this should always be initialized in 1
 
     void Start() => OnButtonClicked += CyclicNumberCounter;
 

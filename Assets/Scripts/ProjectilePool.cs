@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class ProjectilePool : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static ProjectilePool SharedInstance; 
+    public List<GameObject> BulletsPooled;
+
+    public GameObject BulletToPool;
+
+    public int PoolSize;
+
+    private void Awake() => SharedInstance = this;
+
     void Start()
     {
         
