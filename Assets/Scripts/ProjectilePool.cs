@@ -31,7 +31,10 @@ public class ProjectilePool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PoolsManager.IsInputDisabled) shootBulletManager();
+        if (PoolsManager.IsInputDisabled == false)
+        {
+            shootBulletManager();
+        }
     }
 
     GameObject GetPooledBullet()

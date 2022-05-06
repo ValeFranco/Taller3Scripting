@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoolsManager : MonoBehaviour
 {
-    public static bool IsInputDisabled = false;
+    [SerializeField] public static bool IsInputDisabled = false;
 
     [SerializeField] ProjectilePool myBulletPool1, myBulletPool2, myBulletPool3;
 

@@ -8,6 +8,7 @@ public class BulletType2 : Bullet
     {
         StartCoroutine(disableInputFor1Second());
         GetComponent<Collider>().enabled = false;
+        Debug.Log("Bullet 2 impacted");
     }
     IEnumerator disableInputFor1Second()
     {
