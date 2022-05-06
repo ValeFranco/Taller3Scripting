@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Client : MonoBehaviour
 {
-    [SerializeField] private FactoryFecade factory;
+    [SerializeField] private FactoryFacade factory;
 
     private GameObject lastObject;
 
     void Update()
     {
-        
+       
     }
     public void GetNewObject(ObjectType objectType)
     {

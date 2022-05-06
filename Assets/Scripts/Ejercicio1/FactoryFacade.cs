@@ -8,7 +8,7 @@ public enum ObjectType
     SecondObject,
     ThridObject
 }
-public class FactoryFecade : MonoBehaviour
+public class FactoryFacade : MonoBehaviour
 {
     [SerializeField]
     private IFactory firstFactory;

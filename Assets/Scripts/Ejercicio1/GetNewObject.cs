@@ -2,20 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetNewObject : MonoBehaviour
+public class CreateNewObject : MonoBehaviour
 {
-   
+    private FactoryFacade facade;
+
+    private void Awake()
+    {
+        facade = GetComponent<FactoryFacade>();
+    }
+
     void OnEnable()
     {
-        EventManager.onClicked += NewObject;
+        EventManager.onClickedBtn1 += CreateObjectType1;
+        EventManager.onClickedBtn2 += CreateObjectType2;
+        EventManager.onClickedBtn3 += CreateObjectType3;
     }
     void OnDisable()
     {
-        EventManager.onClicked -= NewObject;
+        EventManager.onClickedBtn1 -= CreateObjectType1;
+        EventManager.onClickedBtn2 -= CreateObjectType2;
+        EventManager.onClickedBtn3 -= CreateObjectType3;
     }
 
-    void NewObject()
+    void CreateObjectType1()
     {
-       //client.GetNewObject(objectType);
+        facade.GetNewObject(ObjectType.FristObject);
+    }
+    void CreateObjectType2()
+    {
+        facade.GetNewObject(ObjectType.SecondObject);
+    }
+    void CreateObjectType3()
+    {
+        facade.GetNewObject(ObjectType.ThridObject);
     }
 }
