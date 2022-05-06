@@ -12,13 +12,17 @@ public class Client : MonoBehaviour
     {
         factory = GetComponent<FactoryFacade>();
     }
-    public void GetNewObject(ObjectType objectType)
+    public void GetNewObject()
     {
         if(lastObject != null)
         {
             Destroy(lastObject);
         }
-        lastObject = factory?.GetNewObject(objectType);
+        lastObject = factory?.ObtenerObjeto();
         lastObject.transform.position = transform.position;
+    }
+    public void ClickButton()
+    {
+        factory.ObtenerObjeto();
     }
 }
