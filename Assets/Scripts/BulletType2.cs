@@ -6,18 +6,8 @@ public class BulletType2 : Bullet
 {
     public override void OnImpactDo()
     {
-        StartCoroutine(disableInputFor1Second());
-        GetComponent<Collider>().enabled = false;
         Debug.Log("Bullet 2 impacted");
-    }
-    IEnumerator disableInputFor1Second()
-    {
         PoolsManager.IsInputDisabled = true;
-        yield return new WaitForSeconds(0.5f);
-        PoolsManager.IsInputDisabled = true;
-        GetComponent<Collider>().enabled = true;
-        gameObject.SetActive(false);
-
-
     }
+    
 }

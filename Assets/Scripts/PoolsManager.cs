@@ -22,6 +22,11 @@ public class PoolsManager : MonoBehaviour
     }
     private void Update()
     {
+        if (IsInputDisabled)
+        {
+            StartCoroutine(disableInputFor1Second());
+        }
+
         if (Input.GetMouseButtonDown(1)) //change pool
         {
             PoolSwitcher();
@@ -59,6 +64,14 @@ public class PoolsManager : MonoBehaviour
     }
 
 
+    IEnumerator disableInputFor1Second()
+    {
+        PoolsManager.IsInputDisabled = true;
+        yield return new WaitForSeconds(1);
+        PoolsManager.IsInputDisabled = false;
+
+
+    }
 
 
 }
