@@ -275,7 +275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 325718870}
         m_TargetAssemblyTypeName: Client, Assembly-CSharp
-        m_MethodName: ClickButton
+        m_MethodName: GetNewObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -949,9 +949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd9b28aa71e6584c901c333a8109fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstFactory: {fileID: -7619226509226759937, guid: cc7608e5394e7444ca4c251ff41b60b4, type: 3}
-  secondFactory: {fileID: -6624250179157511, guid: 21836175d8546bd46a021c9e5c0a62cf, type: 3}
-  thirdObject: {fileID: 7192750873850810309, guid: d6ba4919eebff334ab008ed86a852e95, type: 3}
 --- !u!4 &1410271144
 Transform:
   m_ObjectHideFlags: 0
