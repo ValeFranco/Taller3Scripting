@@ -10,6 +10,7 @@ public enum ObjectType
 }
 public class FactoryFacade : MonoBehaviour
 {
+    
     [SerializeField]
     private IFactory firstFactory;
 
@@ -19,8 +20,11 @@ public class FactoryFacade : MonoBehaviour
     [SerializeField]
     private IFactory thridFactory;
 
+    
+
     public GameObject GetNewObject(ObjectType objectType)
     {
+
         GameObject result = null;
 
         switch (objectType)
