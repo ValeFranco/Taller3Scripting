@@ -2,43 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ObjectType
-{
-    FristObject,
-    SecondObject,
-    ThirdObject
-}
 public class FactoryFacade : MonoBehaviour
 {
     
     [SerializeField]
-    private IFactory firstFactory;
+    private FirstObject firstFactory;
 
     [SerializeField]
-    private IFactory secondFactory;
+    private SecondObject secondFactory;
 
     [SerializeField]
-    private IFactory thridFactory;
+    private ThirdObject thirdObject;
 
-    
+    int caso = 1;
 
-    public GameObject GetNewObject(ObjectType objectType)
+    private void Awake()
+    {
+        firstFactory = GetComponent<FirstObject>();
+        secondFactory= GetComponent<SecondObject>();
+        thirdObject = GetComponent<ThirdObject>();
+    }
+
+    public GameObject ObtenerObjeto()
     {
 
         GameObject result = null;
 
-        switch (objectType)
+        switch (caso)
         {
-            case ObjectType.FristObject:
+            case 1:
                 result = firstFactory?.GetNewObject();
+                caso++;
                 break;
 
-            case ObjectType.SecondObject:
+            case 2:
                 result = secondFactory?.GetNewObject();
+                caso++;
                 break;
 
-            case ObjectType.ThirdObject:
-                result = thridFactory?.GetNewObject();
+            case 3:
+                result = thirdObject?.GetNewObject();
+                caso = 1;
                 break;
         }
 
