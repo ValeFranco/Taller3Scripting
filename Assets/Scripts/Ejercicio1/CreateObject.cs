@@ -17,6 +17,7 @@ public class CreateObject : MonoBehaviour
         {
             EventManager.onClicked += CreateObjectType1;
         }
+
         
         //EventManager.onClickedBtn2 += CreateObjectType2;
         //EventManager.onClickedBtn3 += CreateObjectType3;
